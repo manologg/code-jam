@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat input.A
+echo "-----------------------"
+echo
+cat output.A

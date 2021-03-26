@@ -1,0 +1,15 @@
+#!/bin/bash
+
+max_tam=0
+for i in `cat $1`
+do
+    chars=`echo $i | wc -m`
+    tam=`echo "$chars - 1" | bc`
+    if [[ $tam -gt $max_tam ]]
+    then
+        max_tam=$tam
+        echo "max: '$i'"
+    fi
+done
+
+echo "max_tam = $max_tam"

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+year=$(date '+%Y')
+
+year=123
+
+for problem in a b c d
+do
+    mkdir -p ${year}/qr/${problem}
+
+    cat template.py \
+        | sed 's/<YEAR>/'${year}'/g' \
+        | sed 's/<ROUND>/QR/g' \
+        | sed 's/<PROBLEM>/'$(echo $problem | tr abcd ABCD)'/g' \
+        > ${year}/qr/${problem}/${problem}.py
+
+    touch ${year}/qr/${problem}/example.in
+    touch ${year}/qr/${problem}/example.out
+done
