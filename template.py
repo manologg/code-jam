@@ -1,8 +1,8 @@
 # coding=utf-8
 
-# Code Jam <YEAR>
-# Round <ROUND>
-# Problem <PROBLEM>
+# Code Jam 2021
+# Round QR
+# Problem C
 # @author: manolo
 
 from sys import stdin, stdout
@@ -21,16 +21,17 @@ def read_int_line():
 
 
 def write(case, what):
-    stdout.write(f'Case #{case}: {what}\n')
+    stdout.write('Case #{}: {}\n'.format(case, what))
 
 
-def solve(n, l):
-    pass
+def solve(e, r, n):
+    return 0
 
 
 T = read_one_int_line()
 for case in range(1, T + 1):
-    n = read_one_int_line()
-    l = read_int_line()
-    what = solve(n, l)
+    # e, r, n = read_int_line()
+    # what = solve(e, r, n)
+    x, y, word = read_line().split(' ')
+    what = solve(int(x), int(y), word)
     write(case, what)
