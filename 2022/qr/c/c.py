@@ -1,8 +1,8 @@
 # coding=utf-8
 
-# Code Jam <YEAR>
-# Round <ROUND>
-# Problem <PROBLEM>
+# Code Jam 2022
+# Round QR
+# Problem C
 # @author: manolo
 
 from sys import stdin, stdout
@@ -24,15 +24,22 @@ def write(case, what):
     stdout.write('Case #{}: {}\n'.format(case, what))
 
 
-def solve(e, r, n):
-    return 0
+def solve(dice):
+    dice = sorted(dice)
+    i = 0
+    while i < len(dice):
+        if dice[i] < i + 1:
+            dice = dice[:i] + dice[i + 1:]
+        else:
+            i += 1
+
+    return len(dice)
 
 
 if __name__ == '__main__':
     T = read_one_int_line()
     for case in range(1, T + 1):
-        # e, r, n = read_int_line()
-        # what = solve(e, r, n)
-        x, y, word = read_line().split(' ')
-        what = solve(int(x), int(y), word)
+        n = read_int_line()
+        dice = read_int_line()
+        what = solve(dice)
         write(case, what)
